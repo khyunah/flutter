@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: '위젯 연습',
       theme: ThemeData(primarySwatch: Colors.amber),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: const Scaffold(
         body: SafeArea(
           child: Container(),
         ),
