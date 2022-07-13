@@ -23,15 +23,18 @@ Widget _buildInfo(String count, String title) {
     children: [
       Text(
         count,
-        style: TextStyle(fontSize: 15)),
-      SizedBox(height: 2),
-      Text(title,
-        style: TextStyle(fontSize: 15)),
+        style: const TextStyle(fontSize: 15),
+      ),
+      const SizedBox(height: 2),
+      Text(
+        title,
+        style: const TextStyle(fontSize: 15),
+      ),
     ],
   );
 }
 
-Widget _buildLine(){
+Widget _buildLine() {
   return Container(
     width: 2,
     height: 60,

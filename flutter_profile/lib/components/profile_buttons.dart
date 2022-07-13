@@ -16,11 +16,13 @@ class ProfileButtons extends StatelessWidget {
 }
 
 Widget _buildFollowButton() {
-  return InkWell( // 이벤트 리스너 역할
+  return InkWell(
+    // 이벤트 리스너 역할
     onTap: () {
       print('Follow 버튼 클릭됨');
     },
-    child: Container( // 이벤트 리스너가 없음
+    child: Container(
+      // 이벤트 리스너가 없음
       alignment: Alignment.center,
       width: 150,
       height: 45,
@@ -37,11 +39,13 @@ Widget _buildFollowButton() {
 }
 
 Widget _buildMessageButton() {
-  return InkWell( // 이벤트 리스너 역할
+  return InkWell(
+    // 이벤트 리스너 역할
     onTap: () {
       print('Message 버튼 클릭됨');
     },
-    child: Container( // 이벤트 리스너가 없음
+    child: Container(
+      // 이벤트 리스너가 없음
       alignment: Alignment.center,
       width: 150,
       height: 45,
@@ -50,11 +54,9 @@ Widget _buildMessageButton() {
         style: TextStyle(color: Colors.black),
       ),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all()
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all()),
     ),
   );
 }
-

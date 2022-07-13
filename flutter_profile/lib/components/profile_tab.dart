@@ -16,7 +16,7 @@ class _ProfileTabState extends State<ProfileTab>
   @override
   void initState() {
     super.initState();
-    _tabController = new TabController(
+    _tabController = TabController(
         length: 2,
         vsync:
             this); // length : 개수, this를 사용하려면 with SingleTickerProviderStateMixin Mixin 해야한다.
@@ -36,32 +36,37 @@ class _ProfileTabState extends State<ProfileTab>
 // 컨트롤러를 만들기 위해서는 with SingleTickerProviderStateMixin을 사용해야 한다.
 // 초기화할때 아이콘 개수와 어떤 컨트롤러를 사용할지 정의 해주면 됨.
   Widget _buildTabBar() {
-    return TabBar(controller: _tabController, tabs: const [
-      // List 형식
-      Tab(icon: Icon(Icons.receipt_long_outlined)),
-      Tab(icon: Icon(Icons.receipt)),
-    ]);
+    return TabBar(
+      controller: _tabController,
+      tabs: const [
+        // List 형식
+        Tab(icon: Icon(Icons.receipt_long_outlined)),
+        Tab(icon: Icon(Icons.receipt)),
+      ],
+    );
   }
 
   Widget _buildTabBarView() {
     return TabBarView(
-      controller: _tabController, 
+      controller: _tabController,
       children: [
         GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
+          // 레이아웃을 정의 하는 속성
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, // 교차축 카드 개수
             crossAxisSpacing: 10, // 하나당 횡축 여백
             mainAxisSpacing: 10, // 하나당 주축 여백
           ),
           itemCount: 42,
           itemBuilder: (context, index) {
-            return Image.network('https://picsum.photos/id/${index + 1}/200/200'); // 이미지 주소로 받아오기
+            return Image.network(
+                'https://picsum.photos/id/${index + 1}/200/200'); // 이미지 주소로 받아오기
           },
         ),
         Container(
           color: Colors.orange,
         ),
-      ]
+      ],
     );
   }
 }

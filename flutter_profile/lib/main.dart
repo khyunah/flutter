@@ -29,7 +29,7 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: _buildProfileAppBar(),
       body: Column(
-        children: [
+        children: const <Widget>[
           SizedBox(height: 20),
           ProfileHeader(),
           SizedBox(height: 20),
@@ -45,7 +45,7 @@ class ProfilePage extends StatelessWidget {
   }
 }
 
-AppBar _buildProfileAppBar(){
+AppBar _buildProfileAppBar() {
   return AppBar(
     leading: Icon(Icons.arrow_back_ios), // leading : 왼쪽에 나오는 영역
     title: Text('Profile'),
