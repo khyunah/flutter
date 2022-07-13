@@ -11,19 +11,35 @@ class RecipePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // 얘 때문에 레이아웃 조정가능 함
-      appBar: _buildRecipeAppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 5.0, // 그림자
+        actions: const [
+          Icon(
+            CupertinoIcons.search,
+            color: Colors.black,
+          ),
+          SizedBox(width: 15),
+          Icon(
+            CupertinoIcons.heart,
+            color: Colors.redAccent,
+          ),
+          SizedBox(
+            width: 15,
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
-          // crossAxisAlignment: CrossAxisAlignment.start, // 수평방향 정렬
-          children: [
-            RecipeTitle(),
-            RecipeMenu(),
-            RecipeListItem(imageName: "coffee", title: "Made Coffee"),
-            RecipeListItem(imageName: "burger", title: "Made Burger"),
-            RecipeListItem(imageName: "pizza", title: "Made Pizza"),
-          ]
-        ),
+            // crossAxisAlignment: CrossAxisAlignment.start, // 수평방향 정렬
+            children: const [
+              RecipeTitle(),
+              RecipeMenu(),
+              RecipeListItem(imageName: "coffee", title: "Made Coffee"),
+              RecipeListItem(imageName: "burger", title: "Made Burger"),
+              RecipeListItem(imageName: "pizza", title: "Made Pizza"),
+            ]),
       ),
     );
   }
@@ -31,12 +47,20 @@ class RecipePage extends StatelessWidget {
   AppBar _buildRecipeAppBar() {
     return AppBar(
       backgroundColor: Colors.white,
-      elevation: 1.0,   // 그림자
-      actions: [
-        const Icon(CupertinoIcons.search, color: Colors.black,),
-        const SizedBox(width: 15),
-        const Icon(CupertinoIcons.heart, color: Colors.redAccent,),
-        const SizedBox(width: 15,),
+      elevation: 1.0, // 그림자
+      actions: const [
+        Icon(
+          CupertinoIcons.search,
+          color: Colors.black,
+        ),
+        SizedBox(width: 15),
+        Icon(
+          CupertinoIcons.heart,
+          color: Colors.redAccent,
+        ),
+        SizedBox(
+          width: 15,
+        ),
       ],
     );
   }

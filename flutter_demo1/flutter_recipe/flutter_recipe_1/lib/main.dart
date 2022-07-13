@@ -11,8 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,  // 디버그 표시 제거
+      debugShowCheckedModeBanner: false, // 디버그 표시 제거
       theme: ThemeData(fontFamily: "PatuaOne"), // 전체 폰트를 변경한 것
+      title: 'MaterialApp test',
       home: RecipePage(),
     );
   }

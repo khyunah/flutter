@@ -1,6 +1,3 @@
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 import 'package:flutter/material.dart';
 
 class RecipeTitle extends StatelessWidget {
@@ -8,8 +5,8 @@ class RecipeTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
       child: Text(
         "Recipes",
         style: TextStyle(fontSize: 30),

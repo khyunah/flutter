@@ -10,11 +10,11 @@ class RecipeMenu extends StatelessWidget {
       child: Row(
         children: [
           _buildMenuItem(Icons.food_bank, "ALL"),
-          SizedBox(width: 25),
+          const SizedBox(width: 25),
           _buildMenuItem(Icons.emoji_food_beverage, "Coffee"),
-          SizedBox(width: 25),
+          const SizedBox(width: 25),
           _buildMenuItem(Icons.fastfood, "Berger"),
-          SizedBox(width: 25),
+          const SizedBox(width: 25),
           _buildMenuItem(Icons.local_pizza, "Pizza"),
         ],
       ),
@@ -28,17 +28,31 @@ class RecipeMenu extends StatelessWidget {
       width: 60,
       height: 80,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),  // 테두리 둥글게
-        border: Border.all(color: Colors.black12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 5,
+            spreadRadius: 0,
+          )
+        ],
+        borderRadius: BorderRadius.circular(30), // 테두리 둥글게
+        border: Border.all(color: Color.fromARGB(255, 186, 227, 20)),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,  // 메인 수직정렬 방향
+        mainAxisAlignment: MainAxisAlignment.center, // 메인 수직정렬 방향
         children: [
-          Icon(mIcon, color: Colors.redAccent, size: 30,),
+          Icon(
+            mIcon,
+            color: Colors.redAccent,
+            size: 30,
+          ),
           const SizedBox(
             height: 5,
           ),
-          Text(text, style: const TextStyle(color: Colors.black87),),
+          Text(
+            text,
+            style: const TextStyle(color: Colors.black87),
+          ),
         ],
       ),
     );
