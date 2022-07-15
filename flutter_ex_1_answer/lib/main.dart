@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Welcome to flutter',
       home: Scaffold(
         appBar: AppBar(
+          elevation: 0.0,
           title: const Text('Welcome to flutter'),
         ),
         body: ListView(
@@ -61,14 +62,59 @@ Widget titleSection = Container(
           ),
         ],
       )),
-      Icon(
-        Icons.star,
-        color: Colors.red[500],
-      ),
-      const Text('41'),
+      Rating(),
     ],
   ),
 );
+
+class Rating extends StatefulWidget {
+  const Rating({Key? key}) : super(key: key);
+
+  @override
+  State<Rating> createState() => _RatingState();
+}
+
+class _RatingState extends State<Rating> {
+  bool isClicked = false;
+  int count = 0;
+  IconData iconStar = Icons.star;
+
+  @override
+  void initState() {
+    isClicked = false;
+    count = 40;
+    iconStar = Icons.star;
+  }
+
+  void click() {
+    setState(() {
+      isClicked = isClicked == false ? true : false;
+      if (isClicked) {
+        iconStar = Icons.star_border;
+        count--;
+      } else {
+        iconStar = Icons.star;
+        count++;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        InkWell(
+          onTap: () => click(),
+          child: Icon(
+            iconStar,
+            color: Colors.red,
+          ),
+        ),
+        Text('$count'),
+      ],
+    );
+  }
+}
 
 Widget buttonSection = Row(
   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
