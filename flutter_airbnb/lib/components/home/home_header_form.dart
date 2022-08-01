@@ -43,9 +43,20 @@ class HomeHeaderForm extends StatelessWidget {
   Widget _buildFormTitle() {
     return Column(
       children: [
-        Text('에어비앤비에서 숙소를 검색하세요'),
+        Text(
+          '에어비앤비에서 숙소를 검색하세요',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 32,
+          )
+        ),
         SizedBox(height: gap_xs),
-        Text('혼자하는 여행에 적합한 개인실부터 여럿이 함께하는 여행에 좋은 공간 전체 숙소까지, 에어비앤비에 다 있습니다. '),
+        Text(
+          '혼자하는 여행에 적합한 개인실부터 여럿이 함께하는 여행에 좋은 공간 전체 숙소까지, 에어비앤비에 다 있습니다. ',
+          style: TextStyle(
+            fontSize: 15,
+          )
+        ),
         SizedBox(height: gap_xs),
       ],
     );
