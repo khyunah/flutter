@@ -21,7 +21,7 @@ User me = User(
 
 List<User> friends = [
   User(
-      backgroundImage: '${_urlPrefix}_man.jpg',
+      backgroundImage: '${_urlPrefix}_man_1.jpg',
       name: '홍길동',
       intro: '아버지라 불러도 되겠습니까'),
   User(

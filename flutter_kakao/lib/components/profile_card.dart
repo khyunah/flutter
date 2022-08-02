@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kakao/models/user.dart';
+import 'package:flutter_kakao/screens/profile_screen.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({Key? key, required this.user}) : super(key: key);
@@ -12,7 +13,7 @@ class ProfileCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: InkWell(
         onTap: () {
-          
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileScreen(user: user),));
         },
         child: ListTile(
           // 왼쪽에서 시작 leading
