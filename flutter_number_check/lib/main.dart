@@ -76,6 +76,7 @@ class _MyAppState extends State<MyApp> {
   String _checkNumber() {
     var number = _textController.text;
     var number2 = num.parse(number);
+    _textController.clear();
     return number2.runtimeType == double ? '소수' : '정수';
   }
 }
