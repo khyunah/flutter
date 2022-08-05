@@ -33,7 +33,7 @@ AppBarTheme appBarTheme() {
   return const AppBarTheme(
     centerTitle: false,
     color: Colors.white,
-    elevation: 0.5,
+    elevation: 0.0,
     titleTextStyle: TextStyle(
         fontFamily: 'openSans',
         fontSize: 16.0,
