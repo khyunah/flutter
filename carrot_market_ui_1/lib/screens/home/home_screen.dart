@@ -1,4 +1,5 @@
 import 'package:carrot_market_ui_1/models/product.dart';
+import 'package:carrot_market_ui_1/screens/home/components/product_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -38,9 +39,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView.separated(
         itemBuilder: (context, index) {
-          return Container(
-            child: Text('index: $index'),
-          );
+          return ProductItem(product: productList[index]);
         },
         separatorBuilder: (context, index) => Divider(),
         itemCount: productList.length,
