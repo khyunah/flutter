@@ -1,3 +1,5 @@
+import 'package:carrot_market_ui_1/models/chat.dart';
+import 'package:carrot_market_ui_1/models/neighborhood_life_item.dart';
 import 'package:carrot_market_ui_1/screens/chatting/chatting_screen.dart';
 import 'package:carrot_market_ui_1/screens/home/home_screen.dart';
 import 'package:carrot_market_ui_1/screens/my_carrot/my_carrot_screen.dart';
@@ -22,9 +24,9 @@ class _MainScreenState extends State<MainScreen> {
         index: _selectedIndex,
         children: [
           HomeScreen(),
-          NeighborhoodLifeScreen(),
+          NeighborhoodLifeScreen(timeLineItemList: timeLineItemList),
           NearMeScreen(),
-          ChattingScreen(),
+          ChattingScreen(chatData: chatData),
           MyCarrotScreen(),
         ],
       ),
